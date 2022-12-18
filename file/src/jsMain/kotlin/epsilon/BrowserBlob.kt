@@ -6,6 +6,7 @@ package epsilon
 import koncurrent.Executor
 import org.w3c.files.FileReader
 import org.w3c.files.Blob as BBlob
+import epsilon.readBytesOf
 
 class BrowserBlob(val blob: BBlob) : Blob {
     private val reader by lazy { FileReader() }

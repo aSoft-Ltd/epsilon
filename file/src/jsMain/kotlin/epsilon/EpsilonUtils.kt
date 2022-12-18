@@ -14,7 +14,7 @@ inline fun ArrayBuffer.toByteArray(): ByteArray {
     return ByteArray(array.length) { array[it] }
 }
 
-internal fun FileReader.readBytesOf(
+fun FileReader.readBytesOf(
     blob: Blob,
     executor: Executor,
     actionName: String,
