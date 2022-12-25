@@ -12,8 +12,12 @@ import java.io.File
 internal class FileBlobImpl private constructor(val file: File, override val path: String) : FileBlob {
     override val name: String = file.name
 
-    override fun readBytes(executor: Executor) = Later(executor) { resolve, _ ->
-        resolve(file.readBytes())
+    override fun readBytes(executor: Executor) = Later(executor) { resolve, reject ->
+        try {
+            resolve(file.readBytes())
+        } catch (err: Throwable) {
+            reject(err)
+        }
     }
 
     override fun toString() = "File(name=$name, path=$path)"

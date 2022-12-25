@@ -1,5 +1,3 @@
-@file:JvmName("FileBlobConstructorsCommon")
-
 package epsilon
 
 import kase.Failure
