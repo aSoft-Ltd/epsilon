@@ -3,7 +3,6 @@ package epsilon.serializers
 import epsilon.FileBlob
 import epsilon.FileBlobOrNull
 import kotlinx.serialization.KSerializer
-import kotlinx.serialization.Serializable
 import kotlinx.serialization.Serializer
 import kotlinx.serialization.descriptors.PrimitiveKind
 import kotlinx.serialization.descriptors.PrimitiveSerialDescriptor
