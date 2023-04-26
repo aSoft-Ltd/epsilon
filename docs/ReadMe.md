@@ -1,6 +1,6 @@
 # Epsilon
 
-A Multiplatform logging library
+A Multiplatform library for uploading files
 
 [badges]
 
