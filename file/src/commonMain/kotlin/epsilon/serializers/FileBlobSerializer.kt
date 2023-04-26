@@ -1,7 +1,7 @@
 package epsilon.serializers
 
 import epsilon.FileBlob
-import epsilon.FileBlobOrNull
+import kase.Result
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.Serializer
 import kotlinx.serialization.descriptors.PrimitiveKind
@@ -28,9 +28,9 @@ object FileBlobSerializer : KSerializer<FileBlob> {
         return cachedPath
     }
 
-    private fun String.toFileBlob(): FileBlob = cache[this] ?: try {
+    private fun String.toFileBlob(): FileBlob = Result(cache[this]).thenCatch {
         FileBlob(split(" @ ")[1])
-    } catch (err: Throwable) {
-        FileBlobOrNull(this) ?: throw RuntimeException("Failed to resolve $this into a FileBlob")
-    }
+    }.thenCatch {
+        FileBlob(this)
+    }.valueOrThrow(msg = "Failed to resolve $this into a FileBlob")
 }

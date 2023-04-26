@@ -44,4 +44,5 @@ includeSubs("koncurrent-executors", "../koncurrent/executors", "core", "coroutin
 includeSubs("koncurrent-later", "../koncurrent/later", "core", "coroutines", "test")
 
 // submodules
-includeSubs("epsilon", ".", "core")
+includeSubs("epsilon", ".", "core", "fake", "file")
+includeSubs("epsilon-network", "network", "ktor")

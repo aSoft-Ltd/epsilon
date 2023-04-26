@@ -3,8 +3,8 @@
 package epsilon
 
 import epsilon.serializers.FileBlobSerializer
+import kollections.JsExport
 import kotlinx.serialization.Serializable
-import kotlin.js.JsExport
 
 @Serializable(with = FileBlobSerializer::class)
 interface FileBlob : Blob {
