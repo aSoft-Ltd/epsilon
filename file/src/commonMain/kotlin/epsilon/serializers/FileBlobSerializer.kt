@@ -28,9 +28,9 @@ object FileBlobSerializer : KSerializer<FileBlob> {
         return cachedPath
     }
 
-    private fun String.toFileBlob(): FileBlob = Result(cache[this]).thenCatch {
+    private fun String.toFileBlob(): FileBlob = Result(cache[this]).andCatch {
         FileBlob(split(" @ ")[1])
-    }.thenCatch {
+    }.andCatch {
         FileBlob(this)
     }.valueOrThrow(msg = "Failed to resolve $this into a FileBlob")
 }
