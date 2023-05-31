@@ -4,6 +4,8 @@ plugins {
     id("tz.co.asoft.library")
 }
 
+description = "Fake implementations for epsilon-core"
+
 kotlin {
     if (Targeting.JVM) jvm { library() }
     if (Targeting.JS) js(IR) { library() }

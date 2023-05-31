@@ -4,6 +4,8 @@ plugins {
     id("tz.co.asoft.library")
 }
 
+description = "A kotlin multiplatform abstraction for reading blobs"
+
 kotlin {
     if (Targeting.JVM) jvm { library() }
     if (Targeting.JS) js(IR) { library() }
