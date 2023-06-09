@@ -1,6 +1,3 @@
-@file:JsExport
-@file:Suppress("NON_EXPORTABLE_TYPE")
-
 package epsilon.internal
 
 import epsilon.FileBlob
@@ -12,10 +9,13 @@ import org.w3c.files.File
 import org.w3c.files.FileReader
 
 @PublishedApi
-internal data class FileBlobImpl(val file: File) : FileBlob {
+internal data class FileBlobImpl(val file: File, override val name: String) : FileBlob {
+    constructor(file: File) : this(file, file.name)
+
     override val path = getOrCreateUrl()
-    override val name: String = file.name
+
     private val reader by lazy { FileReader() }
+
     override fun readBytes(executor: Executor) = reader.readBytesOf(
         blob = file,
         executor = executor,
