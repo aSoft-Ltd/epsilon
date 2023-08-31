@@ -18,13 +18,13 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api(projects.koncurrentLaterCoroutines)
+                api(libs.koncurrent.later.coroutines)
             }
         }
 
         val commonTest by getting {
             dependencies {
-                api(projects.koncurrentLaterTest)
+                api(libs.koncurrent.later.test)
                 implementation(libs.kommander.coroutines)
             }
         }

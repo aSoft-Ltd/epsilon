@@ -20,13 +20,13 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 api(projects.epsilonCore)
-                api(projects.kaseCore)
+                api(libs.kase.core)
             }
         }
 
         val commonTest by getting {
             dependencies {
-                api(projects.koncurrentLaterTest)
+                api(libs.koncurrent.later.test)
                 implementation(libs.kommander.coroutines)
             }
         }

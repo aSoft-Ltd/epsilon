@@ -19,14 +19,14 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 api(projects.epsilonCore)
-                api(projects.koncurrentLaterCoroutines)
+                api(libs.koncurrent.later.coroutines)
                 api(ktor.client.core)
             }
         }
 
         val commonTest by getting {
             dependencies {
-                api(projects.koncurrentLaterTest)
+                api(libs.koncurrent.later.test)
                 api(libs.kommander.coroutines)
             }
         }
