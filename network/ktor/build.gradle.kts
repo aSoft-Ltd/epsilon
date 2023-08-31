@@ -18,7 +18,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api(projects.epsilonCore)
+                api(libs.epsilon.core)
                 api(libs.koncurrent.later.coroutines)
                 api(ktor.client.core)
             }

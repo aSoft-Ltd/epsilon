@@ -9,14 +9,16 @@ import com.vanniktech.maven.publish.SonatypeHost
     alias(kotlinz.plugins.dokka)
 }
 
-repositories {
-    publicRepos()
-}
-
 val v = libs.versions.asoft.get()
 
-group = "tz.co.asoft"
-version = v
+repositories {
+	publicRepos()
+}
+
+allprojects {
+    group = "tz.co.asoft"
+    version = v
+}
 
 tasks.dokkaHtmlMultiModule {
     moduleName.set("Epsilon")
@@ -30,7 +32,6 @@ subprojects {
     apply(plugin = "com.vanniktech.maven.publish")
 
     val p = this
-    version = v
 
     configure<MavenPublishBaseExtension> {
         publishToMavenCentral(SonatypeHost.DEFAULT,automaticRelease = true)

@@ -19,7 +19,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api(projects.epsilonCore)
+                api(libs.epsilon.core)
                 api(libs.kase.core)
             }
         }
