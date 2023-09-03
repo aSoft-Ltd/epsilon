@@ -14,10 +14,18 @@ fun includeSubs(base: String, path: String = base, vararg subs: String) {
 }
 
 listOf(
-    "kommander", "koncurrent", "kase"
+    "kommander", "koncurrent", "kase", "symphony", "kollections", "cinematic"
 ).forEach { includeBuild("../$it") }
 
 rootProject.name = "epsilon"
 
-includeSubs("epsilon", ".", "core", "fake", "file")
+includeSubs("epsilon", ".", "core", "fake")
+includeSubs("epsilon-file", "file", "core", "fields")
 includeSubs("epsilon-network", "network", "ktor")
+includeSubs("epsilon-image", "image", "core", "web")
+includeSubs("epsilon-image-react", "image/react", "core", "dom")
+includeSubs("epsilon-image-compose", "image/compose", "core", "html")
+
+// grounds
+includeSubs("grounds-battle", "grounds/battle", "react")
+includeSubs("grounds-battle-compose", "grounds/battle/compose", "core", "html")
