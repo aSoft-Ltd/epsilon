@@ -12,7 +12,10 @@ dependencies {
     implementation("tz.co.asoft:epsilon-core:[version]")
 
     // if you want to upload real files
-    implementation("tz.co.asoft:epsilon-file:[version]")
+    implementation("tz.co.asoft:epsilon-file-core:[version]")
+    
+    // if you want to upload real files in a headless environment
+    implementation("tz.co.asoft:epsilon-file-fields:[version]")
     
     // if you want to upload fake files
     implementation("tz.co.asoft:epsilon-fake:[version]")

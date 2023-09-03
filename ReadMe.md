@@ -2,7 +2,6 @@
 
 A Multiplatform library for uploading files
 
-![Maven](https://img.shields.io/maven-central/v/tz.co.asoft/epsilon/2.0.16?style=for-the-badge)
 ![Kotlin](https://img.shields.io/badge/kotlin-multiplatform-blue?style=for-the-badge&logo=kotlin&logoColor=white)
 ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=&logoColor=white)
@@ -16,16 +15,19 @@ A Multiplatform library for uploading files
 ```kotlin
 dependencies {
     // if you need it in common code
-    implementation("tz.co.asoft:epsilon-core:2.0.16")
+    implementation("tz.co.asoft:epsilon-core:3.0.0")
 
     // if you want to upload real files
-    implementation("tz.co.asoft:epsilon-file:2.0.16")
+    implementation("tz.co.asoft:epsilon-file-core:3.0.0")
+    
+    // if you want to upload real files in a headless environment
+    implementation("tz.co.asoft:epsilon-file-fields:3.0.0")
     
     // if you want to upload fake files
-    implementation("tz.co.asoft:epsilon-fake:2.0.16")
+    implementation("tz.co.asoft:epsilon-fake:3.0.0")
     
     // if you want to to upload files from other networks
-    implementation("tz.co.asoft:epsilon-network:2.0.16")
+    implementation("tz.co.asoft:epsilon-network:3.0.0")
 }
 ```
 
