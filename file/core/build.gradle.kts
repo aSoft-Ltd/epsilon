@@ -20,6 +20,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 api(projects.epsilonCore)
+                api(libs.kollections.primitive)
                 api(libs.kase.core)
             }
         }
