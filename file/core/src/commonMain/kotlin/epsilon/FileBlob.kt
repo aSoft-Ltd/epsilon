@@ -2,7 +2,7 @@
 
 package epsilon
 
-import kollections.JsExport
+import kotlinx.JsExport
 
 interface FileBlob : Blob {
     val path: String

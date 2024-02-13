@@ -4,7 +4,7 @@ package symphony
 
 import cinematic.Live
 import epsilon.FileBlob
-import kollections.JsExport
+import kotlinx.JsExport
 import koncurrent.Later
 
 interface ImageViewerUploader {

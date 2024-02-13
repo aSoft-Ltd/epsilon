@@ -4,7 +4,7 @@ package symphony
 
 import epsilon.Blob
 import epsilon.FileBlob
-import kollections.JsExport
+import kotlinx.JsExport
 
 sealed interface ImageViewerUploaderState {
     val asAwaiting get() = this as? AwaitingImage

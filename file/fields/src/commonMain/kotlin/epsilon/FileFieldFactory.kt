@@ -10,13 +10,14 @@ import symphony.Changer
 import symphony.ListField
 import symphony.list
 import symphony.BaseField
+import symphony.Visibilities
 import kotlin.reflect.KMutableProperty0
 import kotlin.reflect.KProperty0
 
 fun Fields<*>.files(
     name: KProperty0<MutableList<FileBlob>>,
     label: String = name.name,
-    visibility: Visibility = Visibility.Visible,
+    visibility: Visibility = Visibilities.Visible,
     onChange: Changer<List<FileBlob>>? = null,
     factory: ValidationFactory<List<FileBlob>>? = null
 ): ListField<FileBlob> = list(name, label, visibility, onChange, factory)
@@ -25,7 +26,7 @@ fun Fields<*>.file(
     name: KMutableProperty0<FileBlob?>,
     label: String = name.name,
     hint: String = label,
-    visibility: Visibility = Visibility.Visible,
+    visibility: Visibility = Visibilities.Visible,
     onChange: Changer<FileBlob>? = null,
     factory: ValidationFactory<FileBlob>? = null
 ): BaseField<FileBlob> = getOrCreate(name) {

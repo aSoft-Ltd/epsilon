@@ -9,6 +9,7 @@ import koncurrent.Executor
 import koncurrent.Later
 import koncurrent.PendingLater
 import koncurrent.later
+import koncurrent.resolveWith
 import kotlinx.coroutines.CoroutineScope
 
 class NetworkBlob(
@@ -19,7 +20,6 @@ class NetworkBlob(
 ) : Blob {
     override fun readBytes(executor: Executor): Later<ByteArray> {
         val later = PendingLater<ByteArray>(executor)
-        val (downloading) = later.setStages("Downloading $url")
         scope.later {
             val resp = http.get(url) { builder?.let { it() } }
             val channel = resp.bodyAsChannel()
@@ -30,7 +30,6 @@ class NetworkBlob(
             val data = ByteArray(contentLen.toInt())
             do {
                 val currentRead = channel.readAvailable(data, offset, byteBufferSize)
-                later.updateProgress(downloading(offset.toLong(), contentLen))
                 offset += currentRead
             } while (currentRead >= 0)
             later.resolveWith(data)
